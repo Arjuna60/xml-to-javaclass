@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+         <!-- XML Schema Generated from XML Document on Thu Mar 07 2019 08:25:09 GMT-0600 (Central Standard Time) -->
+         <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+         <xs:element name="cfdi:Comprobante">
+               <xs:complexType>
+                     <xs:sequence>
+                           <xs:element name="cfdi:Emisor">
+                                 <xs:complexType>
+                                       <xs:attribute name="Rfc" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="Nombre" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="RegimenFiscal" type="xs:int"></xs:attribute>
+                                 </xs:complexType>
+                           </xs:element>
+                           <xs:element name="cfdi:Receptor">
+                                 <xs:complexType>
+                                       <xs:attribute name="Rfc" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="Nombre" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="UsoCFDI" type="xs:string"></xs:attribute>
+                                 </xs:complexType>
+                           </xs:element>
+                           <xs:element name="cfdi:Conceptos">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="cfdi:Concepto" maxOccurs="unbounded">
+                                                   <xs:complexType>
+                                                         <xs:attribute name="ClaveProdServ" type="xs:int"></xs:attribute>
+                                                         <xs:attribute name="NoIdentificacion" type="xs:int"></xs:attribute>
+                                                         <xs:attribute name="Cantidad" type="xs:int"></xs:attribute>
+                                                         <xs:attribute name="ClaveUnidad" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="Unidad" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="Descripcion" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="ValorUnitario" type="xs:int"></xs:attribute>
+                                                         <xs:attribute name="Importe" type="xs:int"></xs:attribute>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                 </xs:complexType>
+                           </xs:element>
+                           <xs:element name="cfdi:Complemento">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="detallista:detallista">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="detallista:requestForPaymentIdentification">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="detallista:entityType" type="xs:string"></xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="detallista:specialInstruction">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="detallista:text" type="xs:string"></xs:element>
+                                                                           </xs:sequence>
+                                                                           <xs:attribute name="code" type="xs:string"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="detallista:orderIdentification">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="detallista:referenceIdentification" type="xs:int">
+                                                                                       <xs:complexType>
+                                                                                             <xs:attribute name="type" type="xs:string"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                                 <xs:element name="detallista:ReferenceDate" type="xs:date"></xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="detallista:AdditionalInformation">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="detallista:referenceIdentification" type="xs:int">
+                                                                                       <xs:complexType>
+                                                                                             <xs:attribute name="type" type="xs:string"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="detallista:buyer">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="detallista:gln" type="xs:int"></xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="detallista:seller">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="detallista:gln" type="xs:int"></xs:element>
+                                                                                 <xs:element name="detallista:alternatePartyIdentification" type="xs:int">
+                                                                                       <xs:complexType>
+                                                                                             <xs:attribute name="type" type="xs:string"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="detallista:shipTo">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="detallista:gln" type="xs:int"></xs:element>
+                                                                                 <xs:element name="detallista:nameAndAddress">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="detallista:city" type="xs:string"></xs:element>
+                                                                                             </xs:sequence>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="detallista:currency">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="detallista:currencyFunction" type="xs:string"></xs:element>
+                                                                                 <xs:element name="detallista:rateOfChange" type="xs:int"></xs:element>
+                                                                           </xs:sequence>
+                                                                           <xs:attribute name="currencyISOCode" type="xs:string"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="detallista:lineItem" maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="detallista:tradeItemIdentification">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="detallista:gtin" type="xs:int"></xs:element>
+                                                                                             </xs:sequence>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                                 <xs:element name="detallista:alternateTradeItemIdentification" type="xs:int">
+                                                                                       <xs:complexType>
+                                                                                             <xs:attribute name="type" type="xs:string"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                                 <xs:element name="detallista:tradeItemDescriptionInformation">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="detallista:longText" type="xs:string"></xs:element>
+                                                                                             </xs:sequence>
+                                                                                             <xs:attribute name="language" type="xs:string"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                                 <xs:element name="detallista:invoicedQuantity" type="xs:int">
+                                                                                       <xs:complexType>
+                                                                                             <xs:attribute name="unitOfMeasure" type="xs:int"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                                 <xs:element name="detallista:aditionalQuantity" type="xs:int">
+                                                                                       <xs:complexType>
+                                                                                             <xs:attribute name="QuantityType" type="xs:string"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                                 <xs:element name="detallista:grossPrice">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="detallista:Amount" type="xs:int"></xs:element>
+                                                                                             </xs:sequence>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                                 <xs:element name="detallista:netPrice">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="detallista:Amount" type="xs:int"></xs:element>
+                                                                                             </xs:sequence>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                                 <xs:element name="detallista:totalLineAmount">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="detallista:grossAmount">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:sequence>
+                                                                                                                     <xs:element name="detallista:Amount" type="xs:int"></xs:element>
+                                                                                                               </xs:sequence>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                                   <xs:element name="detallista:netAmount">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:sequence>
+                                                                                                                     <xs:element name="detallista:Amount" type="xs:int"></xs:element>
+                                                                                                               </xs:sequence>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                             </xs:sequence>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                           <xs:attribute name="type" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="number" type="xs:int"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="detallista:totalAmount">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="detallista:Amount" type="xs:int"></xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                         <xs:attribute name="xmlns:detallista" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="type" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="contentVersion" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="documentStructureVersion" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="documentStatus" type="xs:string"></xs:attribute>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="tfd:TimbreFiscalDigital">
+                                                   <xs:complexType>
+                                                         <xs:attribute name="xmlns:tfd" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="Version" type="xs:double"></xs:attribute>
+                                                         <xs:attribute name="UUID" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="FechaTimbrado" type="xs:dateTime"></xs:attribute>
+                                                         <xs:attribute name="RfcProvCertif" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="SelloCFD" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="NoCertificadoSAT" type="xs:int"></xs:attribute>
+                                                         <xs:attribute name="SelloSAT" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="xsi:schemaLocation" type="xs:string"></xs:attribute>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                 </xs:complexType>
+                           </xs:element>
+                           <xs:element name="cfdi:Addenda">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="if:FacturaInterfactura">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="if:Emisor">
+                                                                     <xs:complexType>
+                                                                           <xs:attribute name="RI" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="NumProveedor" type="xs:int"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="if:Receptor">
+                                                                     <xs:complexType>
+                                                                           <xs:attribute name="RI" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="Activo" type="xs:string"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="if:Encabezado">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="if:Cuerpo" maxOccurs="unbounded">
+                                                                                       <xs:complexType>
+                                                                                             <xs:attribute name="Renglon" type="xs:int"></xs:attribute>
+                                                                                             <xs:attribute name="Codigo" type="xs:int"></xs:attribute>
+                                                                                             <xs:attribute name="Cantidad" type="xs:int"></xs:attribute>
+                                                                                             <xs:attribute name="Concepto" type="xs:string"></xs:attribute>
+                                                                                             <xs:attribute name="PUnitario" type="xs:int"></xs:attribute>
+                                                                                             <xs:attribute name="Importe" type="xs:int"></xs:attribute>
+                                                                                             <xs:attribute name="SKU" type="xs:int"></xs:attribute>
+                                                                                             <xs:attribute name="SubTotal" type="xs:int"></xs:attribute>
+                                                                                             <xs:attribute name="CantidadUdeM" type="xs:int"></xs:attribute>
+                                                                                             <xs:attribute name="FactorEmpaque" type="xs:int"></xs:attribute>
+                                                                                             <xs:attribute name="U_x0020_de_x0020_M" type="xs:int"></xs:attribute>
+                                                                                             <xs:attribute name="CUnitarioLista" type="xs:int"></xs:attribute>
+                                                                                             <xs:attribute name="TotalDescuentos" type="xs:int"></xs:attribute>
+                                                                                             <xs:attribute name="EAN13" type="xs:int"></xs:attribute>
+                                                                                             <xs:attribute name="UnidadDeMedidaFiscal" type="xs:string"></xs:attribute>
+                                                                                             <xs:attribute name="cfdiClaveProdServ" type="xs:int"></xs:attribute>
+                                                                                             <xs:attribute name="cfdiClaveUnidad" type="xs:string"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                           <xs:attribute name="IdInterno" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="TemplateId" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="Folio" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="FolioSerie" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="SerieFolio" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Serie" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="MonedaDoc" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="MonedaDesc" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Status" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="CFD" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Estatus" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="ProcesoId" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="FolioAvisoPrefactura" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="serie" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="Fecha" type="xs:dateTime"></xs:attribute>
+                                                                           <xs:attribute name="CondicionPago" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="SubTotal" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="Total" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="NumProveedor" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="FechaRecepcion" type="xs:dateTime"></xs:attribute>
+                                                                           <xs:attribute name="Moneda" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="LugarExpedicion" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="TipoCambio" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="NumSucursal" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="FechaOrdenCompra" type="xs:dateTime"></xs:attribute>
+                                                                           <xs:attribute name="MunicipioSucursalCliente" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="GLNReceptor" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="GLNSucursal" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="Departamento" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="RegimenFiscalEmisor" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="FechaVencimientoProgramada" type="xs:dateTime"></xs:attribute>
+                                                                           <xs:attribute name="DiasPlazo" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="ProcesoIdReceptor" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="OmiteCodigoMetodoDePago" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="cfdiUsoCFDI" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="cfdiFormaPago" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="cfdiMetodoPago" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="NoDecimalesRepGrafica" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="cadenaOriginal" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="cadenaOriginalTimbre" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="cadenaOriginalEmisor" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="importeConLetra" type="xs:string"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                         <xs:attribute name="TipoDocumentoId" type="xs:int"></xs:attribute>
+                                                         <xs:attribute name="TipoDocumento" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="Id" type="xs:int"></xs:attribute>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                       <xs:attribute name="xmlns:if" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="xmlns:xsi" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="xmlns:cfdi" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="xsi:schemaLocation" type="xs:string"></xs:attribute>
+                                 </xs:complexType>
+                           </xs:element>
+                     </xs:sequence>
+                     <xs:attribute name="xmlns:detallista" type="xs:string"></xs:attribute>
+                     <xs:attribute name="xmlns:xsi" type="xs:string"></xs:attribute>
+                     <xs:attribute name="xmlns:cfdi" type="xs:string"></xs:attribute>
+                     <xs:attribute name="Version" type="xs:double"></xs:attribute>
+                     <xs:attribute name="Serie" type="xs:string"></xs:attribute>
+                     <xs:attribute name="Folio" type="xs:int"></xs:attribute>
+                     <xs:attribute name="Fecha" type="xs:dateTime"></xs:attribute>
+                     <xs:attribute name="Sello" type="xs:string"></xs:attribute>
+                     <xs:attribute name="FormaPago" type="xs:int"></xs:attribute>
+                     <xs:attribute name="NoCertificado" type="xs:int"></xs:attribute>
+                     <xs:attribute name="Certificado" type="xs:string"></xs:attribute>
+                     <xs:attribute name="CondicionesDePago" type="xs:string"></xs:attribute>
+                     <xs:attribute name="SubTotal" type="xs:int"></xs:attribute>
+                     <xs:attribute name="Moneda" type="xs:string"></xs:attribute>
+                     <xs:attribute name="TipoCambio" type="xs:int"></xs:attribute>
+                     <xs:attribute name="Total" type="xs:int"></xs:attribute>
+                     <xs:attribute name="TipoDeComprobante" type="xs:string"></xs:attribute>
+                     <xs:attribute name="MetodoPago" type="xs:string"></xs:attribute>
+                     <xs:attribute name="LugarExpedicion" type="xs:int"></xs:attribute>
+                     <xs:attribute name="xsi:schemaLocation" type="xs:string"></xs:attribute>
+               </xs:complexType>
+         </xs:element>
+   </xs:schema>
+ 
